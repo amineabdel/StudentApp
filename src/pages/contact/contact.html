@@ -6,13 +6,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  
-    <ion-list >
-      <ion-item *ngFor="let d of data">
-      <p>{{d.Bedrijf}}</p>
+<ion-content class="home" padding>
+  <ion-searchbar [(ngModel)]="term"></ion-searchbar>  
+  <ion-list *ngFor = "let d of data |companySearch:term">
+    <ion-item>
+      <p>{{d.Bedrijf }}</p>
       <p>{{d.Sector}}</p>
-      <p>groen: {{d.groen}} - geel: {{d.geel}} - rood:  {{d.rood}} - blauw: {{d.blauw}} - wit: {{d.wit}}</p>
-      </ion-item>
-    </ion-list>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

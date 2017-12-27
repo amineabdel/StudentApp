@@ -9,18 +9,21 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {CompanySearchPipe} from '../pipes/company-search/company-search'
 
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CompanySearchPipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
