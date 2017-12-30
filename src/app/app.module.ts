@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DetailsPage } from '../pages/details/details';
+import {IonicImageViewerModule} from 'ionic-img-viewer';
+
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,12 +21,14 @@ import {CompanySearchPipe} from '../pipes/company-search/company-search'
     ContactPage,
     HomePage,
     TabsPage,
+    DetailsPage,
     CompanySearchPipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicImageViewerModule
     
   ],
   bootstrap: [IonicApp],
@@ -30,6 +36,7 @@ import {CompanySearchPipe} from '../pipes/company-search/company-search'
     MyApp,
     ContactPage,
     HomePage,
+    DetailsPage,
     TabsPage
   ],
   providers: [

@@ -1,4 +1,4 @@
-import { Pipe,PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Generated class for the CompanySearchPipe pipe.
@@ -7,19 +7,27 @@ import { Pipe,PipeTransform } from '@angular/core';
  */
 @Pipe({
   name: 'companySearch',
-  pure:true
+  pure: true
 })
-export class CompanySearchPipe implements PipeTransform{
+export class CompanySearchPipe implements PipeTransform {
   /**
    * Takes a value and makes it lowercase.
    */
-  transform(bedrijven: any, term: any):any {
-    if(term === undefined) return bedrijven;
+  transform(bedrijven: any[], term: any): any {
+    if (term === undefined) return bedrijven;
     return bedrijven.filter(data => {
-      let b = data.Bedrijf.toLowerCase().includes(term.toLowerCase()); 
-      let s = data.Sector.toLowerCase().includes(term.toLowerCase()); 
-      return b || s;
+      let b = data.Bedrijf.toLowerCase().includes(term.toLowerCase());
+      let s = data.Sector.toLowerCase().includes(term.toLowerCase());
+      
+      //werkt niet volledig denk ik
+      let arrayToString = data.Opleiding + "";
+      let o = arrayToString.toLowerCase().includes(term.toLowerCase());
+     
+
+      return b || s || o ;
     });
-    
+
+
+
   }
 }

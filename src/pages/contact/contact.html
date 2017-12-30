@@ -1,18 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content class="home" padding>
-  <ion-searchbar [(ngModel)]="term"></ion-searchbar>  
-  <ion-list *ngFor = "let d of data |companySearch:term">
-    <ion-item>
-      <p>{{d.Bedrijf }}</p>
-      <p>{{d.Sector}}</p>
-    </ion-item>
-  </ion-list>
-
-</ion-content>
+    <ion-navbar color="danger">
+      <ion-title>
+        Contact
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="home" padding>
+    <ion-searchbar  [(ngModel)]="term"></ion-searchbar>  
+    <button ion-button full outline color="dark"  *ngFor = "let d of data |companySearch:term" (click)="goToDetails(d.Bedrijf,d.Email,d.Contact,d.Adres,d.Post,d.Gemeente,d.Telefoon,d.Standnr,d.Sector)">
+      <p >{{d.Bedrijf }}</p>
+    </button>
+  </ion-content>
