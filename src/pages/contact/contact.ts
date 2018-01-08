@@ -21,7 +21,7 @@ export class ContactPage {
   wit: string;
 
 
-  bm = "Bedrijfsmanagement"
+  bm = "Bedrijfsmanagement";
   om = "Office Management";
   com = "Communicatie";
   multi = "ICT Multimedia";
@@ -58,7 +58,7 @@ export class ContactPage {
 
         if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.wet,this.tech,this.ti,this.elec,this.gez,this.ond);
-    
+
         } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.wet,this.tech,this.gez,this.ond);
         } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && dataOpleiding == "") {
@@ -74,7 +74,7 @@ export class ContactPage {
           this.data[i]["Opleiding"].push(this.multi,this.graf,this.wet,this.tech,this.ti,this.elec);
         } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.gez,this.ond);
-        } 
+        }
 
         else if (this.geel == "WAAR" && this.blauw == "WAAR"  && dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.multi,this.graf,this.ti,this.elec);
@@ -86,7 +86,7 @@ export class ContactPage {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.gez,this.ond);
         } else if (this.groen == "WAAR" && this.rood == "WAAR"  && dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.wet,this.tech);
-        } 
+        }
 
         else if (this.blauw == "WAAR" &&  dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.ti,this.elec);
@@ -94,8 +94,7 @@ export class ContactPage {
           this.data[i]["Opleiding"].push(this.bm,this.om,this.com);
         } else if (this.rood == "WAAR" &&  dataOpleiding == "") {
           this.data[i]["Opleiding"].push(this.wet,this.tech);
-        } 
-
+        }
 
       }
     })
