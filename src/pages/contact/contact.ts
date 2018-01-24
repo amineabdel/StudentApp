@@ -14,13 +14,6 @@ import 'rxjs/add/operator/map'
 export class ContactPage {
   data: {};
 
-  groen: string;
-  geel: string;
-  rood: string;
-  blauw: string;
-  wit: string;
-
-
   bm = "Bedrijfsmanagement";
   om = "Office Management";
   com = "Communicatie";
