@@ -47,55 +47,26 @@ export class ContactPage {
     this.http.get('https://abdelfamine.cloudant.com/jobbeurs/bedrijfsId').map(res => res.json()).subscribe(data => {
       this.data = data["companies"];
       for (var i = 0; i < data["companies"].length; i++) {
-        this.groen = this.data[i].groen;
-        this.geel = this.data[i].geel;
-        this.rood = this.data[i].rood;
-        this.blauw = this.data[i].blauw;
-        this.wit = this.data[i].wit;
 
-        let dataOpleiding = this.data[i]["Opleiding"];
-
-
-        if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.wet,this.tech,this.ti,this.elec,this.gez,this.ond);
-
-        } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.wet,this.tech,this.gez,this.ond);
-        } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.wet,this.tech,this.ti,this.elec);
-        } else if (this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.multi,this.graf,this.wet,this.tech,this.ti,this.elec,this.gez,this.ond);
-
-        }  else if (this.groen == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.wet,this.tech,this.ti,this.elec);
-        } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.blauw == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.ti,this.elec);
-        } else if (this.geel == "WAAR" && this.rood == "WAAR" && this.blauw == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.multi,this.graf,this.wet,this.tech,this.ti,this.elec);
-        } else if (this.groen == "WAAR" && this.geel == "WAAR" && this.wit == "WAAR" && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.multi,this.graf,this.gez,this.ond);
+        if (this.data[i].groen == "WAAR") {
+          this.data[i]["Opleiding"].push(this.bm, this.om, this.com);
         }
 
-        else if (this.geel == "WAAR" && this.blauw == "WAAR"  && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.multi,this.graf,this.ti,this.elec);
-        } else if (this.rood == "WAAR" && this.blauw == "WAAR"  && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.wet,this.tech,this.ti,this.elec);
-        } else if (this.groen == "WAAR" && this.blauw == "WAAR"  && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.ti,this.elec);
-        } else if (this.groen == "WAAR" && this.wit == "WAAR"  && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.gez,this.ond);
-        } else if (this.groen == "WAAR" && this.rood == "WAAR"  && dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com,this.wet,this.tech);
+        if (this.data[i].geel == "WAAR") {
+          this.data[i]["Opleiding"].push(this.multi, this.graf);
         }
 
-        else if (this.blauw == "WAAR" &&  dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.ti,this.elec);
-        } else if (this.groen == "WAAR" &&  dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.bm,this.om,this.com);
-        } else if (this.rood == "WAAR" &&  dataOpleiding == "") {
-          this.data[i]["Opleiding"].push(this.wet,this.tech);
+        if (this.data[i].rood == "WAAR") {
+          this.data[i]["Opleiding"].push(this.wet, this.tech);
         }
 
+        if (this.data[i].blauw == "WAAR") {
+          this.data[i]["Opleiding"].push(this.ti, this.elec);
+        }
+
+        if (this.data[i].wit == "WAAR") {
+          this.data[i]["Opleiding"].push(this.gez, this.ond);
+        }
       }
     })
   }
